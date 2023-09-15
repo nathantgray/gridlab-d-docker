@@ -8,6 +8,7 @@ services:
       - mysql
     volumes:
       - .:/app
+    hostname: gridlabd
     working_dir: /app
     command: gridlabd test.glm
 

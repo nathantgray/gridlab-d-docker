@@ -1,0 +1,22 @@
+// Step 1 - Clock
+clock {
+    timezone GMT0;
+    starttime '2019-01-03 00:00:00';
+    stoptime '2019-01-03 05:00:00';
+}
+//Import modules
+module residential {
+    implicit_enduses NONE; //No enduse lights in house model - occupancy for houses added via ALPG player input.
+}
+module connection;
+
+//// Objects
+//object mysql.database {
+//    name "case_gld_test";
+//    options SHOWQUERY;
+//}
+// Simple house - it will just model some reasonable parameters for a house over time. Think it adds a heating system too.
+object house {
+  name test_house;
+}
+

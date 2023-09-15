@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  gridlabd:
+    build: ./
+    depends_on:
+      - helics3
+    volumes:
+      - .:/app
+    hostname: gridlabd5
+    working_dir: /app
+    command: bash
+
+  helics3:
+    image: helics/helics:v3.4.0
+    hostname: helics3
+    command:
+      helics_broker --federates=1 --name=test --ipv4 --localport=23456
+
